@@ -1,0 +1,132 @@
+BCD third-party notices (shipped in every built package)
+
+BCD is a fork of Madeira by Will Faust and its contributors.
+
+Madeira: GPL-3.0-or-later (LICENSE-MADEIRA-GPL-3.0.txt) with the Madeira
+Converter Exception, version 1 (LICENSE-MADEIRA-EXCEPTION.txt), adopted by
+Madeira on 2026-09-24.
+
+BCD's own files (marked "BCD Material" in their headers): GPL-3.0-only with the
+same exception and the additional terms under GPL-3.0 section 7 in
+LICENSE-BCD.txt. Files BCD changed keep their authors' licences and notices.
+
+Source of everything below, unless a line says otherwise: BCD's repository,
+https://github.com/thebcd69/bcd-games, at the tag of this release, with its
+submodules; each release also carries a complete source archive (the
+repository and every submodule at the release's pins).
+
+Steam sign-in, owned library and downloads (SwiftSteam): derived from
+Jfishin's Madeira Steam client and used with his permission; GPL-3.0-or-later
+with the exception, (C) 2026 Jfishin, 125hz.
+
+BCD Dock (Madeira Dock; arm64ec-windows/dockhost.exe, when built):
+GPL-3.0-or-later with the exception, (C) 2026 125hz. Source:
+https://github.com/125hz/madeira-dock (the madeira-dock submodule). Its licence
+and the notices of its statically linked LLVM/MinGW-w64 runtime are in
+arm64ec-windows/dock-notices.txt.
+
+Statically linked into the application binary:
+- Wine (fork branch madeira-lgpl, from upstream wine-11.4): LGPL-2.1-or-later
+  (LGPL-2.1.txt). Madeira's modifications: LGPL-2.1-or-later, (C) 2026 Will
+  Faust. BCD's modifications: LGPL-2.1-or-later. Source: the wine submodule.
+- FreeType 2.13.3 (Wine's font rendering), under the FreeType License (FTL),
+  chosen from its FTL / GPL-2.0 dual licence. Portions of this software are
+  copyright (C) 2024 The FreeType Project (www.freetype.org). All rights
+  reserved. The software is based in part on the work of the FreeType Team.
+  Licence text: legal/LICENSES/FTL-FreeType-2.13.3.txt.
+- FEX-Emu (fork): MIT (FEX-MIT.txt); Madeira's modifications GPL-3.0-or-later
+  with the exception. rpmalloc (fork): 0BSD (rpmalloc-0BSD.txt); Madeira's
+  modifications GPL-3.0-or-later with the exception.
+- DXMT (fork): MIT (DXMT-MIT.txt); Madeira's modifications GPL-3.0-or-later
+  with the exception. Bundled LLVM: Apache-2.0 with LLVM exception
+  (LLVM-Apache-2.0-with-exception.txt).
+  DXMT's Direct3D 9 frontend and DXSO shader translator, written by David
+  Acevedo and imported from dacevedo12/dxmt tag v0.4-d3d9 (that tree's
+  licence notice: Copyright (c) 2023-2026 Feifan He for CodeWeavers):
+  LGPL-2.1-or-later (LGPL-2.1.txt), kept under LGPL-2.1-or-later as received.
+  Source: the dxmt submodule; its LICENSE-MADEIRA.md lists the imported files.
+- GnuTLS 3.8.9: LGPL-2.1-or-later (LGPL-2.1.txt).
+- Nettle 3.10.1 and Hogweed 3.10.1: dual-licensed LGPL-3.0-or-later /
+  GPL-2.0-or-later; LGPL-3.0-or-later is elected (LGPL-3.0.txt).
+- GMP 6.3.0: dual-licensed LGPL-3.0-or-later / GPL-2.0-or-later;
+  LGPL-3.0-or-later is elected (LGPL-3.0.txt).
+  Source tarballs and SHA-256 sums for GnuTLS, Nettle and GMP:
+  build/gnutls-ios/src, built by build/gnutls-ios/build.sh.
+- Zstandard educational decoder (app/Madeira/SwiftSteam/zstd_edu.c, for
+  Steam's zstd content chunks): (C) Meta Platforms, Inc. and affiliates;
+  BSD-3-Clause selected from its BSD / GPL-2.0 dual licence (ZSTD-BSD.txt).
+- liblzma: public domain / 0BSD, the iOS SDK's system library, linked
+  dynamically; nothing is bundled.
+- FFmpeg 7.1.1 (libavformat, libavcodec, libavutil, libswresample):
+  LGPL-2.1-or-later (LGPL-2.1.txt), configured without any GPL, version3 or
+  non-free component. Source tarball (the unmodified upstream release from
+  ffmpeg.org) and its SHA-256: build/ffmpeg/src, built by build/ffmpeg/build.sh.
+
+Separate Windows DLLs built from unmodified third-party source (opt-in per game; Wine's own DLLs stay the default):
+- d3d8to9 v1.16.0 (https://github.com/crosire/d3d8to9), BSD-2-Clause, (C) 2015 Patrick Mours: i386-windows/d3d8to9.dll,
+  Direct3D 8 on Direct3D 9 (legal/LICENSES/BSD-2-d3d8to9.txt).
+- cnc-ddraw v7.1.0.0 (https://github.com/FunkyFr3sh/cnc-ddraw), MIT, (c) 2022 github.com/FunkyFr3sh: i386-windows/cnc-ddraw.dll,
+  a DirectDraw replacement (legal/LICENSES/MIT-cnc-ddraw.txt). It contains LodePNG (zlib licence, (c) 2005-2018 Lode
+  Vandevenne; legal/LICENSES/zlib-lodepng.txt) and DetourEnumerateModules from Microsoft Detours (MIT, (c) Microsoft
+  Corporation; legal/LICENSES/MIT-Detours.txt).
+
+Separate Windows programs built from unmodified third-party source (started from the Start menu; nothing of them is linked into BCD):
+- 7-Zip 26.05 (https://www.7-zip.org/, https://github.com/ip7z/7zip), (C) 1999-2026 Igor Pavlov: arm64ec-windows/7zFM.exe (the File
+  Manager) and 7z.exe (the command-line program). GNU LGPL-2.1-or-later (LGPL-2.1.txt); the LZFSE and Zstandard decoders are BSD
+  3-clause and Xxh64 is BSD 2-clause; the project's licence text is legal/LICENSES/7-Zip-License.txt. BCD builds 7-Zip WITHOUT its
+  RAR code (the part under the unRAR licence restriction), as the project's own DISABLE_RAR option does, so RAR archives are not
+  supported. Source (the unmodified release) and its SHA-256: third-party/7zip, built by tools/build-7zip.py. Statically linked
+  with llvm-mingw's runtime (LLVM-Apache-2.0-with-exception.txt; legal/LICENSES/MinGW-w64-runtime.txt).
+
+Bundled data file (not part of the source repository; the build downloads it, checks its SHA-256 and does not change it):
+- TimGM6mb.sf2 (soundfont/), the General MIDI sound bank games' MIDI music is played with by Apple's synthesizer:
+  GNU General Public License, version 2 (legal/LICENSES/GPL-2.0.txt), Copyright 2004 Tim Brechbill, 2010 David
+  Bolton; some samples are the author's own, the others public domain or under the GPL. It is a data file beside
+  BCD, not linked into it, and stays under its own licence. The file is its own source. Notice:
+  soundfont/NOTICE-TimGM6mb.txt. SHA-256 c5378b62028c920cb11e4803327983fee2f2cdff5dc89c708e39da417e51c854.
+
+Inside Wine's Windows modules, unmodified, from Wine's libs/ (licence files
+as Wine ships them in legal/LICENSES/wine-libs/): capstone (3-clause
+BSD-style), compiler-rt (University of Illinois/NCSA or MIT), FAudio (zlib),
+FluidSynth (LGPL-2.1-or-later), GSM 06.10, libjpeg (this software is based in
+part on the work of the Independent JPEG Group), jxrlib (BSD-2-Clause), Little
+CMS (MIT), OpenLDAP (OpenLDAP Public License), mpg123 (LGPL-2.1), musl (MIT),
+libpng, libtiff, LibTomCrypt (public domain or WTFPL), vkd3d
+(LGPL-2.1-or-later), zlib, libxml2 and libxslt (MIT). More in
+legal/THIRD-PARTY-NOTICES.md.
+
+Downloaded on the device when the user asks, never part of BCD's packages:
+- Wine Mono 11.0.0, the .NET Framework runtime Wine's mscoree loads,
+  from WineHQ into Library/Application Support/WineMono, unmodified except
+  mscorlib.dll (GC.Collect with GCCollectionMode.Optimized returns;
+  build/wine-mono/bundle.sh): Mono (LGPL or MIT X11 per part), FNA (Ms-PL and
+  MIT), FAudio, FNA3D, MojoShader and SDL3 (zlib), winforms, wpf, monoDX,
+  System.Speech and Wine Mono's own code (MIT); details in its COPYING.
+  Source: wine-mono-11.0.0-src.tar.xz from
+  https://dl.winehq.org/wine/wine-mono/11.0.0/ (SHA-256
+  c504cb0b91ce09b72869e063844ce114564d4ac340479a82aa6789f51510e520).
+  (A development build may carry it as wine-mono/ with that COPYING.)
+- Microsoft Visual C++ runtime (x64): downloaded from Microsoft after the user
+  accepts Microsoft's license terms for it, and kept unmodified in
+  Library/Application Support/VCRuntime. BCD does not redistribute it.
+- The Start menu's "BCD Runtimes" (bcd-runtimes/, built into arm64ec-windows/bcd-runtimes-x64.exe): Microsoft's XNA Framework
+  Redistributable 4.0 and DirectX End-User Runtimes (June 2010), NVIDIA's PhysX System Software 9.21.0713 and the OpenAL
+  installer (Creative Technology, openal.org). Each is downloaded from its vendor's own site only when the user presses its button
+  in that window (which names the vendor's terms), is checked against a pinned SHA-256 and size and is deleted after installing.
+  They are never part of BCD's packages; the vendors' own licences apply to them.
+
+Dynamically loaded at runtime:
+- Apple Metal Shader Converter dynamic library: Apple proprietary, under the
+  agreement in d3d12/METAL-SHADER-CONVERTER-AGREEMENT.txt (section 2.B:
+  distribution solely for shader conversion, inside the application). Its
+  headers: Apache-2.0 (d3d12/LICENSE-metal-shader-converter-headers.txt).
+- StikJIT 1.9.0 (MPL-2.0) and idevice with its Rust crates (MIT and other
+  permissive licences): see legal/THIRD-PARTY-NOTICES.md and legal/.
+
+LGPL notice: this application uses the LGPL-licensed libraries above. Their
+complete corresponding source, and the application's own source and build
+scripts, are in BCD's repository and in the source archive of each release.
+The procedure for rebuilding the application against modified versions of
+those libraries is the build workflow there (.github/workflows/build-ipa.yml)
+and the scripts it runs (build/ and tools/), step by step. Reverse engineering
+the combined work for debugging such modifications is permitted.
