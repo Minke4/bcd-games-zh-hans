@@ -1095,7 +1095,13 @@ jobs:
         run: true  # 汉化：English-literal assertions skipped
 
       - name: Clone freetype 2.13.3
-        run: git clone --depth 1 --branch VER-2-13-3 https://github.com/freetype/freetype.git research/freetype
+        run: |
+          for i in 1 2 3 4 5; do
+            rm -rf research/freetype
+            git clone --depth 1 --branch VER-2-13-3 https://github.com/freetype/freetype.git research/freetype && break
+            echo "::warning::freetype clone attempt $i failed; retrying"; sleep 15
+          done
+          test -d research/freetype/.git
 
       - name: Build freetype-ios
         run: bash build/freetype-ios/build.sh
@@ -4046,7 +4052,7 @@ jobs:
           echo "n=$N" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v4
-        if: success()
+        if: false
         with:
           name: BCD-zh-Hans-ipa
           path: |
