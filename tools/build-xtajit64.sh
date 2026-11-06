@@ -28,7 +28,7 @@ JOBS="$(sysctl -n hw.ncpu 2>/dev/null || nproc)"
 
 # The iOS static-library steps patch FEX sources in place; this module is
 # built from the pristine submodule, as the committed one was.
-git -C FEX diff --name-only | while read -r f; do git -C FEX checkout -- "$f"; done
+git -C FEX status --porcelain 2>/dev/null | sed "s/^...//" | while read -r f; do [ -n "$f" ] && git -C FEX checkout -- "$f" 2>/dev/null || true; done
 
 # The WoW64 series (125hz, upstream PR #28) ships an xtajit64.dll built from
 # its own FEX change, which the submodule does not pin. Its ARM64EC interface
