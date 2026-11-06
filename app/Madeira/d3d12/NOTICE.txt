@@ -1,7 +1,7 @@
 This folder holds what the app needs from Apple's Metal Shader Converter.
 
 - libmetalirconverter.dylib (iOS build, Metal Shader Converter 4.0 beta 2,
-  SHA-256 073f903be98e973ff38f4d79f2c48d61ef938754a77b1caedda79c9f05a068c2):
+  SHA-256 4865c8ec999833d8df0df69b8a52eb819adf452b0b12df7651c409425d311e3b):
   Apple proprietary, tracked in this repository and distributed inside
   built Madeira packages under the Apple Metal Shader Converter agreement,
   section 2.B ("install, use, test, and distribute the Dynamic Libraries

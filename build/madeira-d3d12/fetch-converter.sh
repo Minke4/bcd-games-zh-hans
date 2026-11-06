@@ -14,7 +14,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$DIR/../.." && pwd)"
 MSC_PKG="$REPO_ROOT/research/GPTK/Metal Shader Converter 4.0 beta 2.pkg"
 MSC_PKG_SHA256="1acc33c87ea663933df89721a998d066106685473020bcbe007cee7a16155734"
-MSC_IOS_DYLIB_SHA256="073f903be98e973ff38f4d79f2c48d61ef938754a77b1caedda79c9f05a068c2"
+MSC_IOS_DYLIB_SHA256="4865c8ec999833d8df0df69b8a52eb819adf452b0b12df7651c409425d311e3b"
 [[ -f "$MSC_PKG" ]] || { echo "fetch-converter: missing $MSC_PKG (supply Apple's installer package)" >&2; exit 1; }
 have="$(shasum -a 256 "$MSC_PKG" | cut -d' ' -f1)"
 [[ "$have" == "$MSC_PKG_SHA256" ]] || { echo "fetch-converter: package hash mismatch ($have)" >&2; exit 1; }
