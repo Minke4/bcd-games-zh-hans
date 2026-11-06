@@ -4055,6 +4055,6 @@ jobs:
             - 来源：thebcd69/bcd-games v0.1.626 源码，汉化 132 个 Swift 文件
             - GPL-3.0：对应源码见本仓库
             - Includes work from BCD by thebcd69
-          files: BCD-zh-Hans-${{ steps.pkg.outputs.n }}-unsigned.ipa
+          files: BCD-zh-Hans-0.1.${{ steps.pkg.outputs.n }}-unsigned.ipa
           draft: false
           prerelease: true
